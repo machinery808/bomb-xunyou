@@ -85,9 +85,46 @@ input:not([type=radio]):not([type=checkbox]):focus-visible,textarea:focus-visibl
   .section-head{display:none}
   .grid{padding-top:28px}
   .grid:empty{padding:0}
-  .card{height:344px;min-height:344px;gap:10px}
+  .card{height:314px;min-height:314px;gap:10px}
   .slots{height:70px;min-height:70px;padding:4px 0}
   .slot{width:56px;height:56px;flex:0 0 56px}
   .slot.empty{padding:0!important;min-width:0;max-width:56px;box-sizing:border-box}
   .slot.empty::after{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%)}
 }
+
+/* Reference-like squad cards: compact hierarchy, roster first, action last. */
+.card{padding:18px;background:linear-gradient(155deg,#171f35 0%,#12192b 100%);border-color:#303b59;border-radius:14px}
+.card-top{min-height:28px}
+.type{display:flex;align-items:center;gap:7px}
+.type .count-box{display:grid;place-items:center;width:25px;height:25px;border-radius:6px;background:var(--yellow);color:#151821;font-size:15px;font-weight:1000;line-height:1;box-shadow:0 5px 14px rgba(255,217,61,.13)}
+.type .equals{color:#6f7890;font-size:12px;font-weight:900}
+.type .label{margin-left:0;padding:5px 8px;border-radius:7px;background:rgba(123,130,171,.12);color:#7f89a4;font-size:10px;font-weight:800;line-height:1}
+.status{display:inline-flex;align-items:center;min-height:25px;padding:0 9px;border:1px solid #3a4664;border-radius:999px;background:rgba(255,255,255,.025);font-weight:800}
+.status.online{border-color:rgba(61,221,139,.38);background:rgba(61,221,139,.08);color:#58e89b}
+.status.online i{animation:status-pulse 1.8s ease-in-out infinite}
+.squad-roster{display:flex;align-items:center;justify-content:flex-start;gap:12px;height:70px;padding:3px 0}
+.squad-roster .slot{width:58px;height:58px;flex:0 0 58px;border-color:#2fb4ff;background:radial-gradient(circle,rgba(47,180,255,.16),rgba(47,180,255,.04));font-size:30px;box-shadow:0 0 0 4px rgba(47,180,255,.07),0 8px 20px rgba(0,0,0,.18)}
+.squad-roster .slot.female{border-color:#2fb4ff;background:radial-gradient(circle,rgba(47,180,255,.16),rgba(47,180,255,.04))}
+.squad-roster .slot.empty{margin:0;border-color:var(--yellow);background:rgba(255,217,61,.025);color:#b8a94c;box-shadow:none}
+.squad-meta{display:flex;align-items:center;gap:6px;min-width:0;min-height:25px;overflow:hidden}
+.owner-chip{display:inline-flex;align-items:center;gap:5px;min-width:0;max-width:150px;padding:4px 7px;border:1px solid rgba(255,217,61,.3);border-radius:6px;background:rgba(255,217,61,.07);color:var(--yellow)}
+.owner-chip .owner-avatar{font-size:13px}.owner-chip .owner-name{font-size:11px;color:var(--yellow)}
+.squad-meta .owner-gender,.squad-meta .tag,.squad-meta .mine{flex:0 0 auto;margin:0;padding:4px 7px;border-radius:6px;font-size:10px;line-height:1.1}
+.squad-meta .mine{margin-left:auto}
+.message{display:flex;align-items:center;min-height:40px;padding:9px 11px;border-left:3px solid var(--yellow);border-radius:0 8px 8px 0;background:rgba(255,255,255,.035);color:#cfd4e2;line-height:1.45}
+.online-time{display:flex;align-items:center;min-width:0;color:var(--cyan);font-size:11px;line-height:1.3}.online-time span{flex:0 0 auto}.online-time b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-foot{margin-top:auto;min-height:40px}.time{color:#778198}.view{min-height:40px;min-width:112px;border-color:#1597ef;background:linear-gradient(135deg,#1597ef,#0878dc);color:#fff;font-size:12px;font-weight:900;box-shadow:0 8px 20px rgba(8,120,220,.2)}
+.view:hover{border-color:#4dbaff;background:linear-gradient(135deg,#28aaff,#0d86ed);color:#fff;box-shadow:0 10px 25px rgba(8,120,220,.34)}
+.card:hover .squad-roster .slot:not(.empty){box-shadow:0 0 0 5px rgba(47,180,255,.1),0 11px 25px rgba(0,0,0,.22)}
+.card:hover .squad-roster .slot.empty{border-color:#ffe873;color:#ffe873;background:rgba(255,217,61,.06)}
+
+/* Keep role icon and label inside a stable, readable control. */
+.role-picker legend{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:8px;row-gap:3px;max-width:100%;line-height:1.35}
+.role-picker legend small{min-width:0;line-height:1.35}
+.role-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
+.role-options label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:58px;min-height:58px;padding:6px 22px;overflow:hidden;line-height:1}
+.role-options label span{display:block;font-size:20px;line-height:1}
+.role-options label b{display:block;max-width:100%;font-size:11px;line-height:1;white-space:nowrap}
+.role-options label:has(input:checked)::after{right:8px;top:7px}
+
+@keyframes status-pulse{0%,100%{opacity:.65;box-shadow:0 0 0 0 rgba(91,226,142,.25)}50%{opacity:1;box-shadow:0 0 0 4px rgba(91,226,142,0)}}
