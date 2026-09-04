@@ -11,7 +11,7 @@ button,a,input,textarea,.choice-row label{transition:transform .18s ease,border-
 button:active,.nav-promo a:active{transform:translateY(1px) scale(.97)}
 button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 .nav-promo{padding:7px 7px 7px 9px;border:1px solid rgba(69,216,255,.22);border-radius:12px;background:linear-gradient(120deg,rgba(69,216,255,.09),rgba(255,217,61,.06));box-shadow:inset 0 1px rgba(255,255,255,.04)}
-.promo-brand{display:flex;min-width:132px;flex-direction:column;justify-content:center}.promo-logo{display:block;width:132px;height:auto;object-fit:contain;object-position:left center}.promo-brand small{margin-top:3px}
+.promo-brand{display:flex;min-width:136px;flex-direction:column;justify-content:center}.promo-wordmark{display:flex;align-items:center;gap:7px}.promo-logo{display:block;width:25px;height:25px;object-fit:contain}.promo-wordmark b{color:#32d477;font-size:15px;line-height:1;white-space:nowrap}.promo-brand small{margin-top:3px;padding-left:32px}
 .nav-promo a{display:flex;align-items:center;gap:8px;position:relative;overflow:hidden;padding:10px 12px}
 .nav-promo a::before{content:'';position:absolute;inset:-50% auto -50% -45%;width:28px;background:rgba(255,255,255,.5);transform:rotate(18deg);transition:left .38s ease}
 .nav-promo a:hover{background:#ffe76d;box-shadow:0 7px 22px rgba(255,217,61,.24);transform:translateY(-1px)}
@@ -41,7 +41,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
 .ghost:hover{color:#fff;border-color:#667592;background:rgba(255,255,255,.04)}
 #deleteCurrent{margin-right:auto;border:1px solid #ff6f6f;border-radius:10px;padding:10px 14px;background:rgba(255,90,90,.1);color:#ff9d9d;font-weight:700;cursor:pointer}#deleteCurrent:hover{background:rgba(255,90,90,.18);border-color:#ff9494}
 .card-actions{display:flex;align-items:center;gap:7px}.manage-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);color:var(--muted);font-size:16px;cursor:pointer}.manage-btn:hover{color:var(--yellow);border-color:rgba(255,217,61,.5);background:rgba(255,217,61,.08);transform:translateY(-1px)}
-.empty{max-width:520px;margin:44px auto 90px;padding:42px 24px;text-align:center;border:1px dashed #3a4765;border-radius:14px;background:rgba(18,24,41,.58)}
+.empty{max-width:520px;margin:24px auto 70px;padding:38px 24px;text-align:center;border:1px dashed #3a4765;border-radius:14px;background:rgba(18,24,41,.58)}
 .empty-icon{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 15px;border:1px dashed #687691;border-radius:50%;color:#9ca8bf;font-size:24px}.empty b{display:block;color:var(--ink);font-size:18px}.empty p{margin:8px 0 20px;color:var(--muted);font-size:13px}
 @keyframes card-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes field-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
@@ -77,6 +77,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
   .toolbar{height:70px}
   .section-head{display:none}
   .grid{padding-top:28px}
+  .grid:empty{padding:0}
   .card{height:344px;min-height:344px;gap:10px}
   .slots{height:70px;min-height:70px;padding:4px 0}
   .slot{width:56px;height:56px;flex:0 0 56px}
