@@ -12,3 +12,7 @@
 
 /* Match reference team-card proportions */
 .grid{align-items:start}.card{height:344px;min-height:344px;overflow:hidden;gap:10px}.slots{min-height:70px;height:70px;padding:4px 0}.slot{width:56px;height:56px;flex-basis:56px;font-size:29px}.slot.empty::after{font-size:24px}.need{min-height:24px}.message{min-height:38px;max-height:50px;overflow:hidden}.card-foot{margin-top:auto}.view{height:38px;min-height:38px;padding:7px 11px}@media(max-width:700px){.card{height:340px;min-height:340px;padding:15px;gap:9px}.slots{height:68px;min-height:68px}.slot{width:54px;height:54px;flex-basis:54px;font-size:28px}}
+
+
+/* Prevent empty-state padding from affecting empty squad slots */
+.slot.empty{padding:0!important;text-align:center;min-width:0;max-width:56px;box-sizing:border-box}
