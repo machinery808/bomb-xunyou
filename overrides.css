@@ -9,7 +9,8 @@
 /* Interaction polish */
 button,a,input,textarea,.choice-row label{transition:transform .18s ease,border-color .18s ease,background-color .18s ease,color .18s ease,box-shadow .18s ease,opacity .18s ease}
 button:active,.nav-promo a:active{transform:translateY(1px) scale(.97)}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+button:focus-visible,a:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+input:not([type=radio]):not([type=checkbox]):focus-visible,textarea:focus-visible{outline:0;border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,217,61,.16)}
 .nav-promo{padding:7px 7px 7px 9px;border:1px solid rgba(69,216,255,.22);border-radius:12px;background:linear-gradient(120deg,rgba(69,216,255,.09),rgba(255,217,61,.06));box-shadow:inset 0 1px rgba(255,255,255,.04)}
 .promo-brand{display:flex;min-width:136px;flex-direction:column;justify-content:center}.promo-wordmark{display:flex;align-items:center;gap:7px}.promo-logo{display:block;width:25px;height:25px;object-fit:contain}.promo-wordmark b{color:#32d477;font-size:15px;line-height:1;white-space:nowrap}.promo-brand small{margin-top:3px;padding-left:32px}
 .nav-promo a{display:flex;align-items:center;gap:8px;position:relative;overflow:hidden;padding:10px 12px}
@@ -17,11 +18,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
 .nav-promo a:hover{background:#ffe76d;box-shadow:0 7px 22px rgba(255,217,61,.24);transform:translateY(-1px)}
 .nav-promo a:hover::before{left:115%}.nav-promo a i{font-style:normal;font-size:14px;transition:transform .18s ease}.nav-promo a:hover i{transform:translate(2px,-2px)}
 .nav-promo:hover{border-color:rgba(69,216,255,.48);box-shadow:0 8px 28px rgba(8,124,194,.16),inset 0 1px rgba(255,255,255,.06)}.nav-promo:hover .promo-logo{animation:promo-pop .5s cubic-bezier(.2,.8,.25,1)}
-.primary,.float-post{position:relative;overflow:hidden}.primary::after,.float-post::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.32) 45%,transparent 65%);transform:translateX(-120%);transition:transform .45s ease}.primary:hover::after,.float-post:hover::after{transform:translateX(120%)}
+.primary{position:relative;overflow:hidden}.float-post{position:fixed;overflow:hidden}.primary::after,.float-post::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.32) 45%,transparent 65%);transform:translateX(-120%);transition:transform .45s ease}.primary:hover::after,.float-post:hover::after{transform:translateX(120%)}
 .primary:hover,.float-post:hover{box-shadow:0 12px 30px rgba(255,116,56,.36);transform:translateY(-2px)}
 .filter:hover:not(.active){color:var(--ink);background:#1c263d;border-color:#52627f;transform:translateY(-1px)}
 .filter.active{box-shadow:0 6px 18px rgba(255,217,61,.18)}
-.search:focus-within{border-color:rgba(69,216,255,.7);box-shadow:0 0 0 3px rgba(69,216,255,.09)}
+.search:focus-within{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(255,217,61,.14)}.search input:not([type=radio]):not([type=checkbox]):focus-visible{outline:0;border-color:transparent;box-shadow:none}
 .card{position:relative;isolation:isolate;animation:card-in .42s cubic-bezier(.22,.8,.3,1) backwards;animation-delay:calc(var(--card-index,0)*45ms)}
 .card::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% -20%,rgba(69,216,255,.1),transparent 48%);opacity:0;transition:opacity .22s ease}
 .card:hover{border-color:#5d729b;box-shadow:0 16px 36px rgba(0,0,0,.26);transform:translateY(-5px)}.card:hover::before{opacity:1}
@@ -43,6 +44,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{
 .card-actions{display:flex;align-items:center;gap:7px}.manage-btn{width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);color:var(--muted);font-size:16px;cursor:pointer}.manage-btn:hover{color:var(--yellow);border-color:rgba(255,217,61,.5);background:rgba(255,217,61,.08);transform:translateY(-1px)}
 .empty{max-width:520px;margin:24px auto 70px;padding:38px 24px;text-align:center;border:1px dashed #3a4765;border-radius:14px;background:rgba(18,24,41,.58)}
 .empty-icon{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 15px;border:1px dashed #687691;border-radius:50%;color:#9ca8bf;font-size:24px}.empty b{display:block;color:var(--ink);font-size:18px}.empty p{margin:8px 0 20px;color:var(--muted);font-size:13px}
+.modal{overflow-x:hidden}.form-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.form-grid>*,form label,fieldset,.choice-row,.role-options{min-width:0}input:not([type=radio]):not([type=checkbox]),textarea{display:block;width:100%;min-width:0;max-width:100%}.choice-row label,.role-options label{min-width:0}.form-actions{min-width:0;flex-wrap:wrap}.form-actions button{max-width:100%}
 @keyframes card-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes field-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
 @keyframes promo-pop{35%{transform:translateY(-3px) rotate(-4deg)}70%{transform:translateY(1px) rotate(2deg)}to{transform:none}}
