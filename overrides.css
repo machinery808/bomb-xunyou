@@ -1,0 +1,21 @@
+/* Layout corrections for narrow desktop windows and detail surfaces. */
+.card,.card-top,.card-foot,.type,.message{min-width:0}
+.card{overflow:hidden}
+.message{overflow-wrap:anywhere}
+.detail-list{display:grid;gap:12px}
+.detail-row{display:flex;justify-content:space-between;gap:16px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2)}
+.detail-row span{color:var(--muted);font-size:12px}.detail-row b{font-size:14px;text-align:right;overflow-wrap:anywhere}
+.copy-wide{width:100%;margin-top:14px}
+.owner{display:flex;align-items:center;gap:7px;min-width:0;padding:0 2px}.owner-avatar{font-size:19px;line-height:1}.owner-name{font-size:13px;font-weight:800;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.owner-gender{font-size:10px;color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:3px 7px;white-space:nowrap}.mine{font-size:10px;color:#14161e;background:var(--yellow);border-radius:999px;padding:3px 7px;font-weight:900;margin-left:auto}
+.view{min-height:40px;min-width:108px}.card-foot{margin-top:2px}.tag{line-height:1.2}
+@media (max-width: 900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 560px){.grid{grid-template-columns:minmax(0,1fr)}.nav-inner{height:62px}.hero-stats{gap:6px}.hero-stats div{padding:9px 10px}}
+@media (min-width: 1100px){
+  .wrap{width:min(1220px,calc(100% - 64px))}
+  .hero{grid-template-columns:1.05fr .95fr;min-height:390px;padding-top:68px}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .card{min-height:252px;padding:18px;gap:14px}
+  .slots{gap:14px;padding:6px 0 4px}
+  .slot{width:60px;height:60px;font-size:31px}
+  .section-head{padding-top:40px}
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍌 BOMBANANA 组队大厅</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/overrides.css" />
+  </head>
+  <body>
+    <div class="bg-orbit orbit-a"></div><div class="bg-orbit orbit-b"></div>
+    <header class="nav"><div class="wrap nav-inner">
+      <div class="brand"><span class="brand-mark">💣</span><span><b>BOMBANANA</b><small>组队大厅</small></span></div>
+      <div class="nav-promo"><span class="promo-icon">⚡</span><span><b>迅游加速器 · 官方推荐</b><small>3 人全开 · 低延迟组队不掉线</small></span><a href="https://www.xunyou.com" target="_blank" rel="noreferrer">立即下载 ↗</a></div>
+    </div></header>
+    <main>
+      <section class="hero wrap"><div class="hero-copy"><p class="eyebrow">⚡ 迅游加速 · 语音开黑</p><h1>三猴拆弹，<em>就差</em><strong>一个你</strong></h1><p class="hero-sub">萝莉音 · 青少音 · 御姐音 · 奶狗音 · 帅哥美女<br />24h 在线等你开黑，找到队友马上开局。</p><div class="hero-actions"><button class="primary" id="heroPost">发布组队 <span>＋</span></button><span class="hero-note">🎙️ 语音厅级开黑体验</span></div></div><div class="hero-art"><div class="burst">BOMB<br /><b>🍌</b></div><div class="monkey">🙈</div><div class="hero-stats"><div><b>327</b><span>只小猴在线</span></div><div><b>1,247</b><span>队已凑成</span></div><div><b>99.8%</b><span>迅游加速不掉线</span></div></div></div></section>
+      <section class="toolbar wrap"><div class="filters"><button class="filter active" data-filter="all">🎯 全部队伍</button><button class="filter" data-filter="1=2">🙈 1 缺 2</button><button class="filter" data-filter="2=1">🙉 2 缺 1</button></div><label class="search">⌕<input id="search" placeholder="搜昵称 / Steam码 / 留言..." /></label></section>
+      <section class="wrap"><div class="section-head"><div><p class="eyebrow">LIVE LOBBY</p><h2>正在找队友 <span id="count"></span></h2></div><span class="online-dot"><i></i> 实时更新</span></div><div id="grid" class="grid"></div><div id="empty" class="empty" hidden>没有匹配的队伍，换个关键词试试。</div></section>
+    </main>
+    <button class="float-post" id="floatPost">＋ 发布组队</button>
+    <div class="modal-backdrop" id="modal" hidden><div class="modal"><div class="modal-head"><div><p class="eyebrow">CREATE A SQUAD</p><h3 id="modalTitle">发布组队</h3></div><button class="icon-btn" id="closeModal" aria-label="关闭">×</button></div><form id="postForm"><div class="form-grid"><label>昵称<input id="nickname" required placeholder="不填默认显示「神秘猴」" /></label><label>Steam 码<input id="steam" required inputmode="numeric" placeholder="例如：123456789" /></label></div><fieldset><legend>当前人数</legend><div class="choice-row"><label><input type="radio" name="teamType" value="1=2" checked /> 1 人 · 缺 2</label><label><input type="radio" name="teamType" value="2=1" /> 2 人 · 缺 1</label></div></fieldset><fieldset><legend>你的性别</legend><div class="choice-row compact"><label><input type="radio" name="gender" value="女生" checked /> 🎀 女生</label><label><input type="radio" name="gender" value="男生" /> 🧢 男生</label><label><input type="radio" name="gender" value="保密" /> 🕶️ 保密</label></div></fieldset><label>想找什么样的队友<input id="need" placeholder="例如：盲猴、聋猴" /></label><label>留言<textarea id="message" rows="3" placeholder="说说你的玩法、时间和要求"></textarea></label><label>在线时段<input id="onlineTime" placeholder="例如：工作日 20-23 点" /></label><div class="form-actions"><button type="button" class="ghost" id="cancelModal">取消</button><button class="primary" type="submit">发布到大厅 <span>↗</span></button></div></form></div></div>
+    <div class="toast" id="toast"></div>
+    <div class="modal-backdrop" id="detailModal" hidden><div class="modal"><div class="modal-head"><div><p class="eyebrow">TEAMMATE INFO</p><h3 id="detailTitle">队友信息</h3></div><button class="icon-btn" id="closeDetail" aria-label="关闭">×</button></div><div id="detailBody"></div></div></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
